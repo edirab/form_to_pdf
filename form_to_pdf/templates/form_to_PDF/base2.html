@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <title>Создание pdf</title>
+    {% load bootstrap4 %}
+    {% bootstrap_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    {% bootstrap_javascript jquery='full' %}
+
+</head>
+<body>
+
+<div class="container-fluid">
+    {% block content %}
+    {% endblock content %}
+</div>
+
+</body>
+</html>

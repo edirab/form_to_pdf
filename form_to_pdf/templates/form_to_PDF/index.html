@@ -1,0 +1,57 @@
+{% extends "form_to_PDF/base.html" %}
+
+{% block content %}
+    <h1>Заполните форму и сохраните её в pdf</h1>
+
+
+      {% if error == 'Invalid Captha' %}
+            <div class="alert alert-danger col-lg-10 col-md-12 col-sm-12 col-xs-12" role="alert">
+                Неверная ReCaptcha
+            </div>
+        {% endif %}
+
+        <form action="{% url 'report' %} " method="post">
+            <p><i>Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</i></p>
+            <div class="form-group row">
+                <!-- Имя пользовыателя -->
+                {{ form.sender.errors }}
+                <label for="id_sender" class="col-sm-3 col-md-3 col-lg-2 col-form-label">Имя отправителя: </label>
+                <div class="col-sm-9 col-md-9 col-lg-10">
+                    {{ form.sender }}
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <!-- Имя пользователя -->
+                {{ form.sunject.errors }}
+                <label for="id_subject" class="col-sm-3 col-md-3 col-lg-2 col-form-label">Тема:</label>
+                <div class="col-sm-9 col-md-9 col-lg-10">
+                    {{ form.subject }}
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <!-- E-mail -->
+                {{ form.message.errors }}
+                <label for="id_message" class="col-sm-3 col-md-3 col-lg-2 col-form-label">Сообщение: </label>
+                <div class="col-sm-9 col-md-9 col-lg-10">
+                    {{ form.message }}
+                </div>
+            </div>
+
+            {# Google ReCaptcha #}
+            <!--
+            <script src='https://www.google.com/recaptcha/api.js'></script>
+            <div class="g-recaptcha" data-sitekey="6LeUnLoUAAAAADvWQeWwTJqcsIIXaUNflHzTox_o"></div>
+-           -->
+            <div class="form-group row">
+                <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                </div>
+            </div>
+            {% csrf_token %}
+
+        </form>
+
+
+{% endblock content %}

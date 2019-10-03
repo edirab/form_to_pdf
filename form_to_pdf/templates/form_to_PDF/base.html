@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <title>Создание pdf</title>
+
+    {# Load the tag library #}
+    {% load bootstrap4 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript jquery='full' %}
+    <link href="" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="col-11 col-md-12 col-sm-12 col-xs-12 mx-auto">
+        <div class="row justify-content-center">
+              <div class="col-12 mt-3">
+                {% block content %}
+                {% endblock content %}
+              </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

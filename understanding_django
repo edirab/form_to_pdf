@@ -1,0 +1,8 @@
+
+    1.  Найти определение класса ModelForm можно в django->forms->models.py - class ModelForm(BaseModelForm)
+    Это просто интерфейс. Весь функционал реализован в классе BaseModelForm(BaseForm)
+    В конструкторе создаётся экземпляр объекта того класса, с которым связан ModelForm
+
+    2.  Класс BaseForm: django.forms forms.py
+
+    3. Класс Model в django.db.models base.py
